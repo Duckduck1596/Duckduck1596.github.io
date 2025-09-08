@@ -72,42 +72,39 @@ git push -u origin main
 #### 이후 반복: 작업 -> add -> commit -> push
 
 
-## 5. Git 기본 사용 순서(Workflow)
+## 5. 기존 원격 저장소로 시작(이미 GitHub에 저장소가 있는 경우) — git clone 사용
 
 
-#### 저장소 복제(clone)
+#### 1. 원격 저장소를 로컬로 복제
 ```
 git clone git@github.com:username/repository.git
 cd repository
 ```
 
-#### 작업 후 상태 확인
+#### 2. 작업 상태 확인
 ```
 git status
 ```
 
-#### 스테이징(add)
+#### 3. 스테이징 -> 커밋 -> 푸시
 ```
-git add 파일명
-#### or
 git add .
-```
-
-#### 커밋(commit)
-```
-git commit -m "첫 번째 커밋"
-```
-
-#### 원격 저장소로 푸시(push)
-```
+git commit -m "feat: update something"
 git push origin main
 ```
 
-#### 원격 변경 내역 가져오기
+#### 4. 원격 변경 동기화
 ```
-git pull origin main      # 가져오면서 자동 병합
-git fetch origin          # 가져오기만 하고 병합은 수동
+git pull origin main      # 가져오며 자동 병합
+git fetch origin          # 변경만 가져오고 병합은 수동
 ```
+**핵심 정리**
+
+- 새 저장소를 로컬에서 처음 만들 때 → git init
+
+- 이미 GitHub에 저장소가 있을 때 → git clone
+
+- git clone으로 가져온 폴더 안에서는 다시 git init을 실행하지 않습니다(중첩 저장소 문제 발생).
 
 ---
 

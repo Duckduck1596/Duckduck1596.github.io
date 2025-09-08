@@ -28,43 +28,43 @@ git config --list
 ---
 ## 4. 새 프로젝트 시작(로컬에서 처음 만드는 경우) — git init 사용
 
-#### 0) (선택) 새 저장소의 기본 브랜치를 main으로 하고 싶다면 한 번만 설정
+#### 0. (선택) 새 저장소의 기본 브랜치를 main으로 하고 싶다면 한 번만 설정
 ```
 git config --global init.defaultBranch main
 ```
 
-#### 1) 작업 폴더 생성 후 진입
+#### 1. 작업 폴더 생성 후 진입
 ```
 mkdir my-project && cd my-project
 ```
-#### 2) Git 초기화
+#### 2. Git 초기화
 ```
 git init
 ```
-#### 3) (선택) README와 .gitignore 생성
+#### 3. (선택) README와 .gitignore 생성
 ```
 echo "# my-project" > README.md
 #### 예: Node라면
 #### echo "node_modules/" > .gitignore
 ```
 
-#### 4) 첫 커밋
+#### 4. 첫 커밋
 ```
 git add .
 git commit -m "chore: initial commit"
 ```
 
-#### 5) GitHub에서 빈 원격 저장소 생성 후, 원격 추가
+#### 5. GitHub에서 빈 원격 저장소 생성 후, 원격 추가
 #### (아래 경로를 본인 것으로 변경)
 ```
 git remote add origin git@github.com:username/my-project.git
 ```
 
-#### 6) 브랜치명이 master라면 main으로 변경(또는 위에서 init.defaultBranch 설정을 사용)
+#### 6. 브랜치명이 master라면 main으로 변경(또는 위에서 init.defaultBranch 설정을 사용)
 ```
 git branch -M main
 ```
-#### 7) 최초 푸시(업스트림 설정)
+#### 7. 최초 푸시(업스트림 설정)
 ```
 git push -u origin main
 ```

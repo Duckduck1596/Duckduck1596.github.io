@@ -116,8 +116,9 @@ git diff                                     # 변경 비교
 git branch                                   # 브랜치 목록
 git checkout -b feature/new-stuff            # 새 브랜치 생성/이동
 ```
-#### …작업
-```…
+#### 작업
+
+```
 git add .
 git commit -m "feat: add new stuff"
 git switch main || git checkout main         # 메인으로 이동

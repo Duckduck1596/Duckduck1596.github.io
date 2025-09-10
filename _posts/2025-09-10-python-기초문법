@@ -1,0 +1,206 @@
+# 🐍 파이썬 기본 문법 정리
+
+이 글은 파이썬을 처음 배우는 사람을 위한 기본 문법 정리입니다.  
+(작성일: 2025-09-09)
+
+---
+
+## 1. 파이썬 특징
+- 인터프리터 언어 → 실행 시 바로 결과 확인 가능
+- 들여쓰기로 코드 블록을 구분
+- 동적 타이핑(dynamic typing) 지원
+
+---
+
+## 2. 변수와 자료형
+
+### 변수 선언
+a = 10          # 정수(int)
+b = 3.14        # 실수(float)
+c = "Hello"     # 문자열(str)
+d = True        # 불리언(bool)
+
+print(type(a), type(b), type(c), type(d))
+주요 자료형: int, float, str, bool, list, tuple, dict, set
+
+---
+## 3. 연산자
+
+### 산술 연산자
+x = 10 + 3      # 13
+y = 10 % 3      # 1 (나머지)
+z = 2 ** 3      # 8 (거듭제곱)
+
+### 비교 연산자
+print(5 > 3)    # True
+print(5 == 3)   # False
+
+### 논리 연산자
+print(True and False)  # False
+print(True or False)   # True
+print(not True)        # False
+
+---
+
+##4. 조건문 (if)
+
+```
+num = 7
+if num % 2 == 0:
+    print("짝수")
+else:
+    print("홀수")
+# 출력: 홀수
+
+score = 85
+if score >= 90:
+    print("A")
+elif score >= 80:
+    print("B")
+else:
+    print("C")
+# 출력: B
+```
+---
+
+##5. 반복문 (for, while)
+
+```
+# for
+for i in range(5):
+    print(i)   # 0,1,2,3,4
+
+# while
+n = 3
+while n > 0:
+    print(n)
+    n -= 1
+# 출력: 3,2,1
+```
+---
+
+## 6. 함수 정의
+```
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Owen"))
+# 출력: Hello, Owen!
+
+```
+---
+
+##7. 자료구조
+
+##리스트 (list)
+```
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+print(fruits[0])     # apple
+```
+
+##튜플 (tuple)
+```
+point = (10, 20)
+print(point[0])      # 10
+```
+##딕셔너리 (dict)
+```
+person = {"name": "Owen", "age": 30}
+print(person["name"])  # Owen
+```
+##집합 (set)
+```
+nums = {1, 2, 3, 3}
+print(nums)           # {1, 2, 3}
+```
+---
+##8. 입력과 출력
+
+# 출력
+print("Hello Python")
+
+# 입력
+```
+num = int(input("숫자 입력: "))
+print("입력한 값:", num)
+# 출력: 입력한 값: (사용자가 입력한 숫자)
+```
+##9. 예외 처리
+```
+try:
+    x = int("abc")   # 오류 발생
+except ValueError:
+    print("❌ 숫자로 변환할 수 없습니다.")
+
+# 출력: ❌ 숫자로 변환할 수 없습니다.
+```
+---
+##10. 모듈과 라이브러리
+```
+import math
+print(math.sqrt(16))   # 4.0
+
+from datetime import datetime
+print(datetime.now())
+# 출력: 현재 날짜와 시간
+```
+---
+
+# 오늘의 정리
+
+- 변수와 자료형을 이해하고, print() / input()으로 기본 입출력 연습하기
+- 조건문과 반복문은 프로그램의 흐름 제어 핵심
+- 함수와 자료구조를 활용하면 더 구조적인 코드 작성 가능
+- 예외 처리로 오류에 안전한 코드 작성
+- 모듈/라이브러리를 통해 파이썬 기능 확장 가능
+
+
+##카페주문기능
+```
+#while 반복 while True 사용
+#메뉴를 선택한다. (여러개의 메뉴를 선택 한다.)
+#구매한 메뉴를 리스트로 보관도 해야 한다.
+#현금을 넣는다.
+#구매한후에 거스름돈을 받는다.
+#구매했던 리스트와 총 구매가격? 출력!!!
+
+menus = {"아메리카노":4000, "카페라떼": 4500, "카푸치노": 5000}
+
+order_list = []
+total_price = 0
+
+print("=====메뉴판=====")
+
+for menu, price in menus.items():
+    print(f"{menu} : {price}원")
+
+while True:
+    selected_menu = input("주문할 메뉴를 입력하세요.")
+    price = menus.get(selected_menu,0)
+
+    if price != 0:
+        order_list.append(selected_menu)
+        total_price = total_price + price
+    elif selected_menu == "q":
+        print("주문 완료")
+        break
+    else:
+        print("메뉴가 없습니다.")
+
+print(f"선택한 메뉴: {order_list}")
+
+money = int(input("금액을 입력하세요."))
+change = money - total_price
+if change >= 0:
+    print(f"총 금액은 {total_price}입니다. 거스름돈은 {change}원입니다.")
+else:
+    print("돈이 부족합니다.")
+```
+
+
+
+
+
+
+
